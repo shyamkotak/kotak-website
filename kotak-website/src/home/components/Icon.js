@@ -3,16 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Icon(props){
 
-  const icon = props.icon[0]
-  const link = props.icon[1]
-  const styles_black = {'color':'black'}
-  const styles = {'color':props.icon[2]}
+  const styles_box = {'color':'black'}
+  const styles_icon = {'color':props.color}
 
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer">
+    <a href={props.link} target="_blank" rel="noopener noreferrer">
       <span className="fa-stack fa-2x">
-        <FontAwesomeIcon style={styles_black} className="fa-stack-2x" icon={["far", "circle"]}/>
-        <FontAwesomeIcon style={styles} className="fa-stack-1x" icon={icon}/>
+        <FontAwesomeIcon style={styles_box} className="fa-stack-2x" icon={["far", "circle"]}/>
+        <FontAwesomeIcon style={styles_icon} className="fa-stack-1x" icon={[props.iclass, props.icon]}/>
       </span>
     </a>
   );

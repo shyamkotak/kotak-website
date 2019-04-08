@@ -7,19 +7,13 @@ import Icon from './components/Icon.js'
 // Het - should this be in it's own file too?
 class IconList extends Component{
   render() {
-    const icons = [[["fas", "envelope"], "mailto:me@shyamkotak.com", "#000000"],
-                   [["fab", "twitter"], "https://twitter.com/shyamkotak_", "#1da1f2"],
-                   [["fab", "github"], "https://github.com/shyamkotak", "#333333"],
-                   [["fab", "linkedin"], "https://www.linkedin.com/in/kotakshyam", "#0077B5"],
-                   [["far", "file-alt"], "Kotak_Resume.pdf", "#000000"]];
-    var list = [];
-    for (var i = 0; i < icons.length; i++) {
-      list.push(<Icon icon={icons[i]} />)
-    }
-
     return (
       <div className="inner_div">
-        {list}
+        <Icon iclass="fas" icon="envelope" link="mailto:me@shyamkotak.com" color="#000000"/>
+        <Icon iclass="fab" icon="twitter" link="https://twitter.com/shyamkotak_" color="#1da1f2"/>
+        <Icon iclass="fab" icon="github" link="https://github.com/shyamkotak" color="#333333"/>
+        <Icon iclass="fab" icon="linkedin" link="https://www.linkedin.com/in/kotakshyam" color="#0077B5"/>
+        <Icon iclass="far" icon="file-alt" link="Kotak_Resume.pdf" color="#000000"/>
       </div>
     )
   }
