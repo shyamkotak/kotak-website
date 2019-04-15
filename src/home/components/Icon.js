@@ -1,17 +1,52 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function Icon(props){
+class Icon extends Component {
 
-  const styles_box = {'color':'black'}
-  const styles_icon = {'color':props.color}
+  constructor(props) {
+    super()
 
-  return (
-    <a className="fa-stack icon" href={props.link} target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon style={styles_box} className="fa-stack-2x" icon={["far", "circle"]}/>
-        <FontAwesomeIcon style={styles_icon} className="fa-stack-1x" icon={[props.iclass, props.icon]}/>
-    </a>
-  );
+    this.iclass = props.iclass
+    this.icon = props.icon;
+    this.link = props.link
+
+    this.color = props.color
+
+    this.state = {
+      hover : false
+    }
+
+  }
+
+  render() {
+
+    var styles;
+    if (this.state.hover) {
+      styles = {'color':this.color}
+    } else {
+      styles = {'color':'gray'}
+    }
+
+    return (
+      <a 
+        style={styles}
+        className="fa-stack fa-2x"
+        href={this.link}
+        target="_blank"
+        onMouseEnter={() => this.setState({hover : true})}
+        onMouseLeave={() => this.setState({hover : false})}
+        rel="noopener noreferrer">
+          <FontAwesomeIcon 
+            className="fa-stack-2x"
+            icon={["far", "circle"]}
+          />
+          <FontAwesomeIcon
+            className="fa-stack-1x"
+            icon={[this.iclass, this.icon]}
+          />
+      </a>
+    );
+  }
 
 }
 
