@@ -19,11 +19,12 @@ class IconList extends Component{
   }
 }
 
+// Het - it feels like I'm passing too many props here. is this normal?
 class App extends Component {
   render() {
     return (
       <div className="outer_div">
-        <Image height="200px" width="200px" src="favicon.png"/>
+        <Image height="200px" width="200px" src="favicon.png" alt="Shyam Kotak"/>
         <Bio head="Shyam Kotak" subhead="Software Developer @ BrightEdge"/>
         <IconList />
       </div>

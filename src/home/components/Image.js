@@ -6,7 +6,7 @@ function Image(props){
 
   return (
 	  <div className="inner_div">
-	    <img style={styles} src={props.src}></img>
+	    <img style={styles} src={props.src} alt={props.alt}></img>
 	  </div>
   );
 
