@@ -11,6 +11,14 @@
   width:100%;
 }
 
+.icon{
+  font-size:2em;
+}
+
+.icon:hover{
+  font-size:3em;
+}
+
 h2 {
   color: black;
   font-weight: bold;
