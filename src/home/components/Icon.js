@@ -9,7 +9,6 @@ class Icon extends Component {
     this.iclass = props.iclass
     this.icon = props.icon;
     this.link = props.link
-
     this.color = props.color
 
     this.state = {
