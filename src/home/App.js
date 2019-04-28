@@ -3,6 +3,7 @@ import './App.css';
 import Image from './components/Image.js'
 import Bio from './components/Bio.js'
 import Icon from './components/Icon.js'
+import ReactGA from 'react-ga';
 
 // Het - should this be in it's own file too?
 class IconList extends Component{
@@ -19,9 +20,14 @@ class IconList extends Component{
   }
 }
 
-// Het - it feels like I'm passing too many props here. is this normal?
+function initializeGA() {
+    ReactGA.initialize('UA-66442804-1');
+    ReactGA.pageview('/');
+}
+
 class App extends Component {
   render() {
+    initializeGA();
     return (
       <div className="outer_div">
         <Image height="200px" width="200px" src="favicon.png" alt="Shyam Kotak"/>
