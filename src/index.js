@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './styles.css';
 import App from './home/App';
 import * as serviceWorker from './serviceWorker';
+import ReactGA from 'react-ga';
 
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -10,6 +11,9 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faCircle, faFileAlt } from '@fortawesome/free-regular-svg-icons'
 import { faTwitter, faLinkedin, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons'
 library.add(faEnvelope, faCircle, faFileAlt, faTwitter, faLinkedin, faGithub, faMedium)
+
+// Google Analytics
+ReactGA.initialize('UA-66442804-1');
 
 // DOM
 ReactDOM.render(<App />, document.getElementById('root'));
