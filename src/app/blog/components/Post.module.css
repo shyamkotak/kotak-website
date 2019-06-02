@@ -1,0 +1,33 @@
+.post {
+  width:66%;
+  background:white;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font: avenir-next;
+  font-size: 2.5rem;
+  color: black;
+  font-weight: bold;
+}
+
+.date {
+  margin: 0;
+  font: avenir-next;
+  font-size: 1.25rem;
+  color: gray;
+  font-weight: normal;
+}
+
+hr { 
+    display: block;
+    margin-before: 0.5em;
+    margin-after: 0.5em;
+    margin-start: auto;
+    margin-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
