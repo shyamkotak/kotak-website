@@ -17,8 +17,10 @@ class Post extends Component {
 
 	render() {
 		return (
-			<div className={styles.markdown}>
-				<ReactMarkdown source={this.post}/>
+			<div>
+				<Paper className={styles.markdown}>
+					<ReactMarkdown source={this.post}/>
+				</Paper>
 			</div>
 		);
 	}

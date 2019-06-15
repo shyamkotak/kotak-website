@@ -1,7 +1,15 @@
 .markdown {
-  width:66%;
-  background:white;
+  width: 75%;
   margin: 0 auto;
-  padding: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  padding-top:.25rem;
+  padding-bottom:.5rem;
+}
+
+h1:after
+{
+    content:' ';
+    display:block;
+    border:2px solid black;
 }

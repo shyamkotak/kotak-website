@@ -21,7 +21,7 @@ class Blog extends Component {
 		await Promise.all(posts.map(async (post) => {
 			await fetch(post).then(async (response) => {
 				await response.text().then((text) => {
-					postContents.push(text)
+					postContents.unshift(text)
 				})
 			})
 		}))
@@ -36,11 +36,11 @@ class Blog extends Component {
   	)
 
     return (
-    	<div className={styles.blog}>
+    	<body className={styles.blog}>
 	    	<Container maxWidth="md" >
 	    	  <ul>{postsToRender}</ul>
 	      </Container>
-	     </div>
+	     </body>
     );
   }
 }
