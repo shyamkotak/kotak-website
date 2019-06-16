@@ -7,8 +7,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-import createHistory from 'history/createBrowserHistory'
-//require("history").createBrowserHistory
+import { createBrowserHistory as createHistory } from 'history'
 
 import Home from './home/Home'
 import Blog from './blog/Blog'
@@ -27,18 +26,11 @@ class App extends Component {
     let last_slash_index = url.lastIndexOf('/');
     let path = url.substring(last_slash_index + 1);
 
-    if(path === '') {
-      path="/";
-    }
-
-    console.log(path)
-
     this.state = {'path':path};
   }
   
   handleChange = (event, value) => {
     this.setState({ 'path': value });
-    console.log(value)
   }
 
   render() {
@@ -46,7 +38,7 @@ class App extends Component {
       <Router history={history}>
         <AppBar position="static" color="default">
           <Tabs value={this.state.path} onChange={this.handleChange}>
-            <Tab label='Home' value='/' component={Link} to="/"></Tab>
+            <Tab label='Home' value='' component={Link} to="/"></Tab>
             <Tab label='Blog' value='blog' component={Link} to="/blog"></Tab>
           </Tabs>
         </AppBar>

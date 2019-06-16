@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './Post.module.css'
+import styles from './Post.css'
 
 import Paper from '@material-ui/core/Paper';
 const ReactMarkdown = require('react-markdown/with-html')

@@ -1,5 +1,5 @@
 .markdown {
-  width: 75%;
+  width: 85%;
   margin: 0 auto;
   margin-bottom: 3rem;
   padding: 1.5rem;
@@ -9,7 +9,7 @@
 
 h1:after
 {
-    content:' ';
-    display:block;
-    border:2px solid black;
+  content:' ';
+  display:block;
+  border:2px solid black;
 }

@@ -1,20 +1,16 @@
 .outer_div {
   text-align:center;
-  padding-top:10ex;
+  padding-top:4em;
 }
 
-h2 {
-  color: black;
+.heading {
   font-weight: bold;
-  font-size: 50px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  font-size: 4em;
+  margin: 0px;
 }
 
-h3 {
-  color: black;
-  font-weight: normal;
-  font-size: 30px;
+.subheading {
+  font-size: 2em;
   margin-top: 0px;
   margin-bottom: 7px;
 }
