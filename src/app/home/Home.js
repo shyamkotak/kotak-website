@@ -12,7 +12,7 @@ class Home extends Component {
       <div className="outer_div">
         <Image height="200px" width="200px" src="favicon.png" alt="Shyam Kotak"/>
         <p className="heading">Shyam Kotak</p>
-        <p className="subheading">Software Developer</p>
+        <p className="subheading">Software Developer @ BrightEdge</p>
         <IconList />
       </div>
     );

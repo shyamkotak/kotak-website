@@ -36,7 +36,7 @@ class Blog extends Component {
 
     return (
       <div className={styles.blog}>
-        <Container maxWidth="md" >
+        <Container maxWidth="md">
           <ul>{postsToRender}</ul>
         </Container>
        </div>
