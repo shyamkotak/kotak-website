@@ -1,6 +1,14 @@
 .outer_div {
   text-align:center;
-  padding-top:10ex;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}
+
+.inner_div{
+  display:inline-block;
+  width:100%;
 }
 
 h2 {

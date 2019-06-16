@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 
 import ReactGA from 'react-ga';
-import {Router, Route, Switch} from 'react-router-dom';
+import { Link, Route, BrowserRouter, Switch } from "react-router-dom";
+
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 import createHistory from 'history/createBrowserHistory'
 //require("history").createBrowserHistory
@@ -18,15 +22,24 @@ history.listen((location, action) => {
 
 class App extends Component {
   render() {
-    return (
-      <Router history={history}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/blog" component={Blog} />
-        </Switch>
-      </Router>
-    );
+    return(
+      <div>
+        <BrowserRouter history={history}>
+          <AppBar position="static" color="default">
+            <Tabs onChange={this.handleChange}>
+              <Tab label='Home' component={Link} to="/"></Tab>
+              <Tab label='Blog' component={Link} to="/blog"></Tab>
+            </Tabs>
+          </AppBar>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/blog" component={Blog}/>
+          </Switch>
+        </BrowserRouter>
+      </div>
+    )
   }
+
 }
 
 export default App;
