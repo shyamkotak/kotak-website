@@ -31,16 +31,16 @@ class Blog extends Component {
 	}
 
   render() {
-  	const postsToRender = this.state.data.map(post =>
+  	const postsToRender = this.state.data.map((post, index) =>
   		<Post post={post}/>
   	)
 
     return (
-    	<body className={styles.blog}>
-	    	<Container maxWidth="md" >
+    	<div className={styles.blog}>
+        <Container maxWidth="md" >
 	    	  <ul>{postsToRender}</ul>
 	      </Container>
-	     </body>
+	     </div>
     );
   }
 }

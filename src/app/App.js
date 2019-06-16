@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import ReactGA from 'react-ga';
-import { Link, Route, BrowserRouter, Switch } from "react-router-dom";
+import { Link, Route, Router, Switch } from "react-router-dom";
 
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -17,26 +17,44 @@ const history = createHistory()
 ReactGA.initialize('UA-66442804-1');
 history.listen((location, action) => {
     ReactGA.pageview(location.pathname + location.search);
-    console.log(location.pathname)
 });
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    let url = window.location.href;
+    let last_slash_index = url.lastIndexOf('/');
+    let path = url.substring(last_slash_index + 1);
+
+    if(path === '') {
+      path="/";
+    }
+
+    console.log(path)
+
+    this.state = {'path':path};
+  }
+  
+  handleChange = (event, value) => {
+    this.setState({ 'path': value });
+    console.log(value)
+  }
+
   render() {
     return(
-      <div>
-        <BrowserRouter history={history}>
-          <AppBar position="static" color="default">
-            <Tabs onChange={this.handleChange}>
-              <Tab label='Home' component={Link} to="/"></Tab>
-              <Tab label='Blog' component={Link} to="/blog"></Tab>
-            </Tabs>
-          </AppBar>
-          <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/blog" component={Blog}/>
-          </Switch>
-        </BrowserRouter>
-      </div>
+      <Router history={history}>
+        <AppBar position="static" color="default">
+          <Tabs value={this.state.path} onChange={this.handleChange}>
+            <Tab label='Home' value='/' component={Link} to="/"></Tab>
+            <Tab label='Blog' value='blog' component={Link} to="/blog"></Tab>
+          </Tabs>
+        </AppBar>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/blog" component={Blog}/>
+        </Switch>
+      </Router>
     )
   }
 
