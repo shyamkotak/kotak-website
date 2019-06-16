@@ -1,0 +1,15 @@
+.markdown {
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  padding-top:.25rem;
+  padding-bottom:.5rem;
+}
+
+h1:after
+{
+  content:' ';
+  display:block;
+  border:2px solid black;
+}
