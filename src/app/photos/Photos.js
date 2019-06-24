@@ -7,26 +7,27 @@ const IMAGES =
 [{
         src: "photos/IMG_3388.jpg",
         thumbnail: "photos/IMG_3388.jpg",
-        caption: "After Rain (Jeshu John - designerspics.com)"
+        caption: "test123"
 },
 {
         src: "photos/IMG_3414.jpg",
         thumbnail: "photos/IMG_3414.jpg",
-        caption: "Boats (Jeshu John - designerspics.com)"
+        caption: "test123"
 },
 {
         src: "photos/IMG_3470.jpg",
         thumbnail: "photos/IMG_3470.jpg",
-        caption: "Boats (Jeshu John - designerspics.com)"
+        caption: "test123"
 },
 {
         src: "photos/IMG_4873.jpg",
         thumbnail: "photos/IMG_4873.jpg",
-        caption: "Boats (Jeshu John - designerspics.com)"
+        caption: "test123"
 },
 {
         src: "photos/IMG_5023.heic",
         thumbnail: "photos/IMG_5023.heic",
+        caption: "test123"
 }]
 
 class Photos extends Component {
