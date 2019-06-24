@@ -11,6 +11,7 @@ import { createBrowserHistory as createHistory } from 'history'
 
 import Home from './home/Home'
 import Blog from './blog/Blog'
+import Photos from './photos/Photos'
 
 const history = createHistory()
 ReactGA.initialize('UA-66442804-1');
@@ -26,11 +27,11 @@ class App extends Component {
     let last_slash_index = url.lastIndexOf('/');
     let path = url.substring(last_slash_index + 1);
 
-    this.state = {'path':path};
+    this.state = {'path': path};
   }
   
   handleChange = (event, value) => {
-    this.setState({ 'path': value });
+    this.setState({'path': value});
   }
 
   render() {
@@ -40,11 +41,14 @@ class App extends Component {
           <Tabs value={this.state.path} onChange={this.handleChange}>
             <Tab label='Home' value='' component={Link} to="/"></Tab>
             <Tab label='Blog' value='blog' component={Link} to="/blog"></Tab>
+            <Tab label='Mems' value='mems' component={Link} to="/mems"></Tab>
           </Tabs>
         </AppBar>
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/blog" component={Blog}/>
+          <Route exact path="/mems" component={Photos}/>
+          <Route exact path='*' component={Home} />
         </Switch>
       </Router>
     )

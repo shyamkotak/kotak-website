@@ -30,6 +30,7 @@ class Blog extends Component {
   }
 
   render() {
+    console.log(styles)
     const postsToRender = this.state.data.map((post, index) =>
       <Post key={index} post={post}/>
     )
