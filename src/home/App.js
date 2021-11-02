@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <div className="outer_div">
         <Image height="200px" width="200px" src="favicon.png" alt="Shyam Kotak"/>
-        <Bio head="Shyam Kotak" subhead="Software Developer @ BrightEdge"/>
+        <Bio head="Shyam Kotak" subhead="Software Engineer"/>
         <IconList />
       </div>
     );
