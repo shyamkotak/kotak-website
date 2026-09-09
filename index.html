@@ -901,12 +901,13 @@
   /* ---------------- auto demo ---------------- */
   var autoDemo = true; // always on — controls removed
   var lastAutoSplat = 0;
+  var idleCount = 0;
 
   function autoSplat(big) {
     var x = 0.15 + Math.random() * 0.7;
     var y = 0.15 + Math.random() * 0.7;
     var a = Math.random() * Math.PI * 2;
-    var f = big ? 4500 + Math.random() * 4500 : 3500 + Math.random() * 3000;
+    var f = big ? 6500 + Math.random() * 4500 : 4000 + Math.random() * 3000;
     splat(x, y, Math.cos(a) * f, Math.sin(a) * f, randomPaletteColor());
   }
 
@@ -962,9 +963,10 @@
         n++;
       }
       if (n === 4) simAcc = 0; // shed backlog instead of spiraling
-      // gentle ambient motion when idle so the hero never looks dead
-      if (autoDemo && now - lastActive > 8000 && now - lastAutoSplat > 2400) {
-        autoSplat(false);
+      // lively ambient motion when idle so the hero stays colorful
+      if (autoDemo && now - lastActive > 4000 && now - lastAutoSplat > 1500) {
+        idleCount++;
+        autoSplat(idleCount % 4 === 0); // every 4th puff is a big one
         lastAutoSplat = now;
       }
     }
