@@ -949,7 +949,7 @@
       }
       if (n === 4) simAcc = 0; // shed backlog instead of spiraling
       // lively ambient motion when idle so the hero stays colorful
-      if (autoDemo && now - lastActive > 1200 && now - lastAutoSplat > 1500) {
+      if (autoDemo && now - lastActive > 500 && now - lastAutoSplat > 1500) {
         idleCount++;
         autoSplat(idleCount % 4 === 0); // every 4th puff is a big one
         lastAutoSplat = now;
