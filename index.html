@@ -695,6 +695,7 @@
   function correctRadius(radius) {
     var aspectRatio = canvas.width / canvas.height;
     if (aspectRatio > 1) radius *= aspectRatio;
+    else radius /= Math.max(aspectRatio, 0.4); // portrait: scale up so splats fill tall screens
     return radius;
   }
   function correctDeltaX(delta) {
@@ -897,11 +898,12 @@
   }
 
   function openingBloom() {
-    // staggered splats so the hero is gorgeous within the first second
-    var n = 9;
+    // staggered splats spread over ~3s so the hero blooms gracefully and
+    // hands off smoothly into the idle rhythm (no burst-then-quiet)
+    var n = 10;
     for (var i = 0; i < n; i++) {
       (function (k) {
-        setTimeout(function () { autoSplat(true); }, 90 * k);
+        setTimeout(function () { autoSplat(k % 3 === 0); }, 300 * k);
       })(i);
     }
   }
